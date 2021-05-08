@@ -10,29 +10,29 @@ using ValheimLib.ODB;
 using BepInEx;
 
 // 名前
-namespace ExampleSword
+namespace SampleSword
 {
     [BepInDependency(ValheimLib.ValheimLib.ModGuid)]
     [BepInPlugin(ModGuid, ModName, ModVer)]
     // てきとーなクラス名
-    public class ExampleSwordClass : BaseUnityPlugin
+    public class ModItemClass : BaseUnityPlugin
     {
         public const string ModGuid = "iDeathHD." + ModName;
         // あなたのmodの名前
-        private const string ModName = "ExampleSword";
+        private const string ModName = "SampleSword";
         private const string ModVer = "0.0.3";
 
-        // unityでつけたAssetBundleName
-        public const string AssetBundleName = "examplesword";
+        // unityでつけたAssetBundleの名前
+        public const string AssetBundleName = "samplesword";
         public static AssetBundle TargetAssetBundle;
 
-        // unityでSwordIronをコピーしてCustomItemsに移動させたやつの名前
-        public const string TargetPrefabPath = "Assets/CustomItems/ExampleSword.prefab";
+        // unityでSwordIronをコピーしてSampleSwordFolderに移動させたやつのパス
+        public const string TargetPrefabPath = "Assets/SampleSwordFolder/SampleSword.prefab";
         public static GameObject TargetPrefab;
 
         // -------------------------------------------------------------------------------------
 
-        internal static ExampleSwordClass Instance { get; private set; }
+        internal static ModItemClass Instance { get; private set; }
 
         private void Awake() {
             Debug.Log("Run Sample Mod Awake");
