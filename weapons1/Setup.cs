@@ -98,13 +98,13 @@ namespace SampleSword
         // -------------------------------------------------------------------------------
 
         // アイテム名のID(unityで指定したID)
-        public const string TargetItemNameId = "$custom_item_name";
+        public const string TargetItemNameId = "$sample_sword_name_id";
         // アイテム名
         public const string TargetItemName_Ja = "ドーンブレイカー";
         public const string TargetItemName_En = "Dawnbreaker";
 
         // アイテム説明のID(unityで指定したID)
-        public const string TargetDescId = "$custom_item_description";
+        public const string TargetDescId = "$sample_sword_desc_id";
         // アイテム説明
         public const string TargetDesc_Ja = "説明文";
         public const string TargetDesc_En = "Description";
