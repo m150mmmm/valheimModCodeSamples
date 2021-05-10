@@ -23,10 +23,11 @@ namespace SampleSword
         public const string AssetBundleName = "samplesword";
         public static AssetBundle TargetAssetBundle;
 
+        // unityでつけたプレハブの名前
+        public const string TargetPrefabName = "SampleSword";
 
         // アイテム名のID(unityで指定したID)
         public const string TargetItemNameId = "$sample_sword_name_id";
-
 
         // 作成、修理に使用する作業台のid
         public const string CraftingStationPrefabName = "piece_workbench";
@@ -37,7 +38,7 @@ namespace SampleSword
         private void Awake()
         {
             TargetAssetBundle = AssetUtils.LoadAssetBundleFromResources(AssetBundleName, typeof(ModItemClass).Assembly);
-            var targetAsset = TargetAssetBundle.LoadAsset<GameObject>(AssetBundleName);
+            var targetAsset = TargetAssetBundle.LoadAsset<GameObject>(TargetPrefabName);
             var targetItem = new CustomItem(targetAsset, fixReference: true,
                 new ItemConfig {
                     Amount = 1,
