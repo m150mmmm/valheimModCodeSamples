@@ -29,8 +29,10 @@ namespace SampleSword
         // アイテム名のID(unityで指定したID)
         public const string TargetItemNameId = "$sample_sword_name_id";
 
-        // 作成、修理に使用する作業台のid
+        // 作成、修理に使用する作業台のid 作業台:piece_workbench , 鍛冶場:forge, 職人テーブル:piece_artisanstation
         public const string CraftingStationPrefabName = "piece_workbench";
+        // 修理に使用する作業台のid
+        public const string RepairStationPrefabName = "piece_workbench";
         // 使用する作業台のレベル
         public const int CraftingStationLevel = 1;
 
@@ -45,20 +47,25 @@ namespace SampleSword
                     Name = TargetItemNameId,
                     Enabled = true,
                     CraftingStation = CraftingStationPrefabName,
-                    RepairStation = CraftingStationPrefabName,
+                    RepairStation = RepairStationPrefabName,
                     MinStationLevel = CraftingStationLevel,
                     Requirements = new[]
                     {
                         // 必要素材
-                        // この場合木材2個,火打石1個で作成
+                        // この場合木材10個,火打石5個で作成
+                        // レベル2にアップグレードするには木材3個、火打石1個
+                        // レベル3にアップグレードするにはレベル2にするのに必要な素材の2倍の木材6個、火打石2個
+                        // レベル4にアップグレードするにはレベル2にするのに必要な素材の3倍の木材9個、火打石3個
                         // 素材のidはhttps://wiki3.jp/valheimjp/page/59を参照
                         new RequirementConfig {
-                            Item = "Wood",
-                            Amount = 2
+                            Item = "Wood", // 作成時必要素材ID
+                            Amount = 10, // 作成時必要素材数
+                            AmountPerLevel = 3, // アップグレード時必要素材数
                         },
                         new RequirementConfig {
-                            Item = "Flint",
-                            Amount = 1
+                            Item = "Flint", // 作成時必要素材ID
+                            Amount = 5, // 作成時必要素材数
+                            AmountPerLevel = 1, // アップグレード時必要素材数
                         },
                     }
                 });
