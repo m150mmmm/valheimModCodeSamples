@@ -7,12 +7,17 @@ https://m150mmmm.tumblr.com/post/650602856065449985
 
 ## valheim mod 2武器編
 https://m150mmmm.tumblr.com/post/650623209753968640  
-weapons1フォルダ武器編のサンプルファイル  
+weapons1フォルダが武器編のサンプルファイルです 
 weapon1/modFile/SampleSwordが最終的な成果物  
 
-### 前提MOD
+## valheim mod 3設置物編
+Piece1フォルダが武器編のサンプルファイルです
+
+## 前提MOD
 https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/  
 https://valheim.thunderstore.io/package/ValheimModding/HookGenPatcher/  
-https://www.nexusmods.com/valheim/mods/1138  
+https://www.nexusmods.com/valheim/mods/1138/
+
+
 
 
