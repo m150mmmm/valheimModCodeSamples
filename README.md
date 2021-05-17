@@ -13,6 +13,13 @@ weapon1/modFile/SampleSwordが最終的な成果物
 ## valheim mod 3設置物編
 Piece1フォルダが武器編のサンプルファイルです
 
+
+
+# 各フォルダについて
+Piece1: 設置物追加のサンプル
+Trader: 商人の売り物リストにアイテムを追加するサンプル
+weapons1: 武器追加のサンプル
+
 ## 前提MOD
 https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/  
 https://valheim.thunderstore.io/package/ValheimModding/HookGenPatcher/  
