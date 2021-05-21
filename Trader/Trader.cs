@@ -69,7 +69,7 @@ namespace WeWantEatRice.trader
                     // 存在しない場合アイテムを追加する
                     if (!isAlreadyAdd)
                     {
-                        Debug.Log(string.Format("Added Item to the Trader Item List: {0}", targetPrefabName));
+                        Debug.Log(string.Format("Added Item to the Trader Item List: {0}", targetPrefabName[i]));
                         ___m_items.Add(targetTradeItem);
                     }
                 }
