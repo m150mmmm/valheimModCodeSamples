@@ -6,35 +6,27 @@ using HarmonyLib;
 using Jotunn.Entities;
 using Jotunn.Managers;
 
-/**
-* 商人の売り物リストにアイテムを追加する
-**/
 
 namespace WeWantEatRice.trader
 {
     public static class TraderClass
     {
 
-        private static readonly Harmony harmony = new Harmony("sampleTrader_001");
+        private static readonly Harmony harmony = new Harmony("zzzM150_WeWantEatRice_001");
 
-        private static CustomItem TargetCustomItem;
-        private static string targetPrefabName;
+        private static List<CustomItem> TargetCustomItem = new List<CustomItem>();
+        private static List<string> targetPrefabName = new List<string>();
 
-        private static int targetItemAmount;
-        private static int targetItemPrice;
+        private static List<int> targetItemAmount = new List<int>();
+        private static List<int> targetItemPrice = new List<int>();
 
-        /**
-        * 使う側はこれを呼べばOK
-        * ci: JotunnのCustomItem
-        * amount: 売ってくれる時のアイテム数
-        * price: 値段
-        **/
+
         public static void addTraderItems(CustomItem ci, int amount, int price)
         {
-            TargetCustomItem = ci;
-            targetItemAmount = amount;
-            targetItemPrice = price;
-            targetPrefabName = ci.ItemDrop.name;
+            TargetCustomItem.Add(ci);
+            targetItemAmount.Add(amount);
+            targetItemPrice.Add(price);
+            targetPrefabName.Add(ci.ItemDrop.name);
             harmony.PatchAll();
         }
 
@@ -56,26 +48,30 @@ namespace WeWantEatRice.trader
             
             private static void addItem(List<Trader.TradeItem> ___m_items)
             {
-                targetTradeItem = new Trader.TradeItem();
-                targetTradeItem.m_stack = targetItemAmount;
-                targetTradeItem.m_price = targetItemPrice;
-                targetTradeItem.m_prefab = TargetCustomItem.ItemDrop;
-
-                // 商人の売り物アイテムリストにaddしたいアイテムがすでに存在するかどうかをチェック
-                var isAlreadyAdd = false;
-                foreach (Trader.TradeItem item in ___m_items)
+                for (int i = 0; i < TargetCustomItem.Count; i++)
                 {
+                    targetTradeItem = new Trader.TradeItem();
+                    targetTradeItem.m_stack = targetItemAmount[i];
+                    targetTradeItem.m_price = targetItemPrice[i];
+                    targetTradeItem.m_prefab = TargetCustomItem[i].ItemDrop;
+
+                    // 商人の売り物アイテムリストにaddしたいアイテムがすでに存在するかどうかをチェック
+                    var isAlreadyAdd = false;
+
+                    foreach (Trader.TradeItem item in ___m_items)
+                    {
+                        if (!isAlreadyAdd)
+                        {
+                            isAlreadyAdd = targetPrefabName[i] == item.m_prefab.name;
+
+                        }
+                    }
+                    // 存在しない場合アイテムを追加する
                     if (!isAlreadyAdd)
                     {
-                        isAlreadyAdd = targetPrefabName == item.m_prefab.name;
-                  
+                        Debug.Log(string.Format("Added Item to the Trader Item List: {0}", targetPrefabName));
+                        ___m_items.Add(targetTradeItem);
                     }
-                }
-                // 存在しない場合アイテムを追加する
-                if (!isAlreadyAdd)
-                {
-                    Debug.Log(string.Format("Added Item to the Trader Item List: {0}", targetPrefabName));
-                    ___m_items.Add(targetTradeItem);
                 }
             }
         }

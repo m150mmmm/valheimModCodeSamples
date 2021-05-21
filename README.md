@@ -1,6 +1,6 @@
 # valheimModCodeSamples
 valheim　最低限のMODの作り方の日本語のサンプル  
-情報は2021年5月9日時点のものです  
+情報は最終更新時点のものです  
 
 ## valheim mod 1環境構築編
 https://m150mmmm.tumblr.com/post/650602856065449985  
@@ -15,10 +15,11 @@ Piece1フォルダが武器編のサンプルファイルです
 
 
 
-# 各フォルダについて
+## 各フォルダについて
 Piece1: 設置物追加のサンプル  
 Trader: 商人の売り物リストにアイテムを追加するサンプル  
-weapons1: 武器追加のサンプル  
+weapons1: 武器追加のサンプル
+Data: その他メモなど  
 
 ## 前提MOD
 https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/  
