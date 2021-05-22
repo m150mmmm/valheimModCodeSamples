@@ -10,13 +10,14 @@ https://m150mmmm.tumblr.com/post/650623209753968640
 weapons1フォルダが武器編のサンプルファイルです 
 weapon1/modFile/SampleSwordが最終的な成果物  
 
-## valheim mod 3設置物編
-Piece1フォルダが武器編のサンプルファイルです
-
-
+## valheim mod 3建築物編
+https://m150mmmm.tumblr.com/post/651907717220450304  
+Piece1フォルダが建築編のサンプルファイルです  
+一緒に入っているdllがサンプルの最終的な成果物  
+  
 
 ## 各フォルダについて
-Piece1: 設置物追加のサンプル  
+Piece1: 建築物追加のサンプル  
 Trader: 商人の売り物リストにアイテムを追加するサンプル  
 weapons1: 武器追加のサンプル
 Data: その他メモなど  

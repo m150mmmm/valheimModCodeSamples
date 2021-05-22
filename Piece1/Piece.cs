@@ -20,13 +20,11 @@ namespace SamplePiece
         public const string PluginVersion = "0.0.1";
 
         // unityでつけたAssetBundleの名前
-        public const string AssetBundleName = "samplepiece";
+        public const string AssetBundleName = "samplecubeassetbundle";
         public static AssetBundle TargetAssetBundle;
         // unityでつけたプレハブの名前
-        public const string TargetPrefabName = "SamplePiece";
+        public const string TargetPrefabName = "SamplePiece001";
 
-        // アイテムの説明のID(unityで指定したID)
-        public const string TargetItemDescId = "$sample_piece_desc_id";
 
         // 作成時近くに必要な作業台のid 作業台:piece_workbench , 鍛冶場:forge, 職人テーブル:piece_artisanstation
         public const string CraftingStationPrefabName = "piece_workbench";
@@ -43,7 +41,6 @@ namespace SamplePiece
                 new PieceConfig
                 {
                     CraftingStation = CraftingStationPrefabName,
-                    Description = TargetItemDescId,
                     Enabled = true,
                     PieceTable = CraftingToolName,
                     Requirements = new[]
