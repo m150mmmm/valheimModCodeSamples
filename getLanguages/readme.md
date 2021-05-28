@@ -5,6 +5,7 @@
 getLanguages.dll  
 通常のmodと同じように**\SteamApps\common\Valheim\BepInEx\pluginsに置いて使う
 セッティングの言語選択の次へ(右の矢印)押下時にコンソールに対応言語の一覧を表示する  
+前提mod: BepInEx  
    
 copyLocalization.bat  
 **\SteamApps\common\Valheim\BepInEx\plugins\【MOD名】\Assets\Translationsに置いて使う  
