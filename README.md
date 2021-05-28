@@ -20,6 +20,7 @@ Piece1フォルダが建築編のサンプルファイルです
 Piece1: 建築物追加のサンプル  
 Trader: 商人の売り物リストにアイテムを追加するサンプル  
 weapons1: 武器追加のサンプル
+getLanguages: 対応言語を調べるdllと言語ファイルのEnglishを全対応言語分コピーするbat  
 Data: その他メモなど  
 
 ## 前提MOD
